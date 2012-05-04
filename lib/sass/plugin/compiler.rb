@@ -290,7 +290,7 @@ module Sass::Plugin
           parent = File.dirname(f)
           if individual_files_hash[parent]
             next if individual_files_hash[parent].first != f
-            try_delete_css individual_files_hash[parent].second
+            try_delete_css individual_files_hash[parent][1]
           else
             next if f !~ /\.s[ac]ss$/
             try_delete_css f.gsub(/\.s[ac]ss$/, '.css')
